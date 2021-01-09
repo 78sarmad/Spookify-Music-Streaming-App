@@ -4,25 +4,22 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VP_Project.Models;
 
 namespace VP_Project
 {
     public partial class ViewPlaylistScreen : Form
     {
-        SoundPlayer Player;
-
         public ViewPlaylistScreen()
         {
             InitializeComponent();
 
-            Player = new SoundPlayer();
-            Player.LoadTimeout = 60000;
-            Player.SoundLocation = "https://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand3.wav";
-            Player.Play();
+            //Session.Player.LoadTimeout = 60000;
+            //Session.Player.SoundLocation = "https://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand3.wav";
+            //Session.Player.Play();
         }
     }
 }

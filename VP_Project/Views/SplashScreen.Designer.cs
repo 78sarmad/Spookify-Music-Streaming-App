@@ -30,8 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.ExitBtn = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +59,16 @@
             this.ExitBtn.Text = "X";
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat SemiBold", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(364, 357);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(285, 47);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Spookify Music";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::VP_Project.Properties.Resources.logo;
@@ -69,16 +79,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(120, 115);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat SemiBold", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(364, 357);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(285, 47);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Spookify Music";
             // 
             // SplashScreen
             // 

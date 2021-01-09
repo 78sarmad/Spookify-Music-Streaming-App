@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VP_Project.Models;
 
 namespace VP_Project
 {
@@ -15,6 +16,11 @@ namespace VP_Project
         public SplashScreen()
         {
             InitializeComponent();
+
+            Database.openConnection();
+            if (Database.isConnValid())
+                MessageBox.Show("Yep");
+
 
             HomeScreen HS = new HomeScreen();
             HS.Show();
