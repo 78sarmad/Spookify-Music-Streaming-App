@@ -35,36 +35,35 @@ namespace VP_Project
 
         private void PlaylistsScreen_Load(object sender, EventArgs e)
         {
-            if (Session.isTrackLoaded)
-                setNowPlaying();
-
             SignedInTitle.Text = Session.ActiveUser.Name;
+            if (Session.isTrackLoaded)
+                loadTrackInfo();
+
+            if (Session.isPlaying)
+                setNowPlaying();
 
             int playlistCount = Session.ActiveUser.Playlists.Count;
 
             if (playlistCount > 0)
             {
                 playlist1 = Session.ActiveUser.Playlists.ElementAt(0);
-
+                Playlist1Cover.BackgroundImage = new Bitmap(VP_Project.Properties.Resources.playlist_96px);
                 Playlist1Name.Text = playlist1.Name;
-                Playlist1Tracks.Text = playlist1.NoOfTracks;
+                Playlist1Tracks.Text = playlist1.NoOfTracks + " Tracks";
 
                 if (playlistCount > 1)
                 {
                     playlist2 = Session.ActiveUser.Playlists.ElementAt(1);
-
-                    PlayStopBtn.BackgroundImage = new Bitmap(VP_Project.Properties.Resources.playlist_96px);
-                    Playlist1Name.Text = playlist1.Name;
-                    Playlist1Tracks.Text = playlist1.NoOfTracks;
-
+                    Playlist2Cover.BackgroundImage = new Bitmap(VP_Project.Properties.Resources.playlist_96px);
+                    Playlist2Name.Text = playlist2.Name;
+                    Playlist2Tracks.Text = playlist2.NoOfTracks + " Tracks";
 
                     if (playlistCount > 2)
                     {
                         playlist3 = Session.ActiveUser.Playlists.ElementAt(2);
-
-                        PlayStopBtn.BackgroundImage = new Bitmap(VP_Project.Properties.Resources.playlist_96px);
-                        Playlist1Name.Text = playlist1.Name;
-                        Playlist1Tracks.Text = playlist1.NoOfTracks;
+                        Playlist3Cover.BackgroundImage = new Bitmap(VP_Project.Properties.Resources.playlist_96px);
+                        Playlist3Name.Text = playlist3.Name;
+                        Playlist3Tracks.Text = playlist3.NoOfTracks + " Tracks";
                     }
                 }
             }
@@ -72,64 +71,66 @@ namespace VP_Project
 
         private void Playlist1Cover_Click(object sender, EventArgs e)
         {
-            setSyncLabel();
-            MEF.loadMusic();
-            setNowPlaying();
+            ViewPlaylistScreen VPS = new ViewPlaylistScreen(playlist1);
+            VPS.Show();
+            this.Dispose();
         }
 
         private void Playlist1Name_Click(object sender, EventArgs e)
         {
-            setSyncLabel();
-            MEF.loadMusic();
-            setNowPlaying();
+            ViewPlaylistScreen VPS = new ViewPlaylistScreen(playlist1);
+            VPS.Show();
+            this.Dispose();
         }
 
         private void Playlist2Cover_Click(object sender, EventArgs e)
         {
-            setNowPlaying();
-            setSyncLabel();
-            MEF.loadMusic();
-            setNowPlaying();
+            ViewPlaylistScreen VPS = new ViewPlaylistScreen(playlist2);
+            VPS.Show();
+            this.Dispose();
         }
 
         private void Playlist2Name_Click(object sender, EventArgs e)
         {
-            setNowPlaying();
-            setSyncLabel();
-            MEF.loadMusic();
-            setNowPlaying();
+            ViewPlaylistScreen VPS = new ViewPlaylistScreen(playlist2);
+            VPS.Show();
+            this.Dispose();
         }
 
         private void Playlist3Cover_Click(object sender, EventArgs e)
         {
-            setSyncLabel();
-            MEF.loadMusic();
-            setNowPlaying();
+            ViewPlaylistScreen VPS = new ViewPlaylistScreen(playlist3);
+            VPS.Show();
+            this.Dispose();
         }
 
         private void Playlist3Name_Click(object sender, EventArgs e)
         {
-            setSyncLabel();
-            MEF.loadMusic();
-            setNowPlaying();
+            ViewPlaylistScreen VPS = new ViewPlaylistScreen(playlist3);
+            VPS.Show();
+            this.Dispose();
+        }
+
+        private void loadTrackInfo()
+        {
+            NowPlayingName.Text = Session.NowPlaying.Name;
+            NowPlayingArtist.Text = Session.NowPlaying.Artist;
+            if (Session.NowPlaying.Cover_URL != null)
+                NowPlayingCover.BackgroundImage = Image.FromStream(WC.OpenRead(Session.NowPlaying.Cover_URL));
+            NowPlayingCover.BorderStyle = BorderStyle.None;
         }
 
         private void setSyncLabel()
         {
+            loadTrackInfo();
             Session.isTrackLoaded = true;
             StatusLbl.Text = "SYNCING TRACK...";
-            setNowPlaying();
         }
 
         private void setNowPlaying()
         {
             if (Session.isPlaying)
             {
-                NowPlayingName.Text = Session.NowPlaying.Name;
-                NowPlayingArtist.Text = Session.NowPlaying.Artist;
-                NowPlayingCover.BackgroundImage = Image.FromStream(WC.OpenRead(Session.NowPlaying.Cover_URL));
-                NowPlayingCover.BorderStyle = BorderStyle.None;
-
                 StatusLbl.Text = "NOW PLAYING";
                 PlayStopBtn.BackgroundImage = new Bitmap(VP_Project.Properties.Resources.stop_100px);
             }
@@ -205,6 +206,12 @@ namespace VP_Project
             HomeScreen HS = new HomeScreen();
             HS.Show();
             this.Dispose();
+        }
+
+        private void CreateBtn_Click(object sender, EventArgs e)
+        {
+            CreatePlaylistForm CPF = new CreatePlaylistForm();
+            CPF.Show();
         }
     }
 }

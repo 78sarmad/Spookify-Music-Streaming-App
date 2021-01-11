@@ -73,5 +73,32 @@ namespace VP_Project.Controllers
         {
             DBQ.insertTrackInPlaylist(playlist, track);
         }
+
+        public void createPlaylist(String playlistName)
+        {
+            DBQ.createNewPlaylist(playlistName, Session.ActiveUser.UserID);
+        }
+
+        public String getUserIdFromEmail(String email)
+        {
+            String userEmail = DBQ.retrieveUserIdFromEmail(email);
+            return userEmail;
+        }
+
+        public String getUserEmailFromId(String userId)
+        {
+            String userEmail = DBQ.retrieveUserEmailFromId(userId);
+            return userEmail;
+        }
+
+        public void changeCollaborator(Playlist playlist, String userId)
+        {
+            DBQ.updateCollaborator(playlist, userId);
+        }
+
+        public void deletePlaylist(Playlist playlist)
+        {
+            DBQ.removePlaylistFromDB(playlist);
+        }
     }
 }

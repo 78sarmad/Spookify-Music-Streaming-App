@@ -32,15 +32,15 @@ namespace VP_Project
 
             new_tracks = DBO.loadNewTracks();
             MEF = new Media_Functions();
-            Session.isTrackLoaded = false;
         }
 
         private void HomeScreen_Load(object sender, EventArgs e)
         {
-            if (Session.isTrackLoaded)
-                setNowPlaying();
-
             SignedInTitle.Text = Session.ActiveUser.Name;
+            if (Session.isTrackLoaded)
+                loadTrackInfo();
+            if (Session.isPlaying)
+                setNowPlaying();
 
             if (new_tracks.Count > 0)
             {
@@ -123,8 +123,18 @@ namespace VP_Project
             setNowPlaying();
         }
 
+        private void loadTrackInfo()
+        {
+            NowPlayingName.Text = Session.NowPlaying.Name;
+            NowPlayingArtist.Text = Session.NowPlaying.Artist;
+            if (Session.NowPlaying.Cover_URL != null)
+                NowPlayingCover.BackgroundImage = Image.FromStream(WC.OpenRead(Session.NowPlaying.Cover_URL));
+            NowPlayingCover.BorderStyle = BorderStyle.None;
+        }
+
         private void setSyncLabel()
         {
+            loadTrackInfo();
             Session.isTrackLoaded = true;
             StatusLbl.Text = "SYNCING TRACK...";
         }
@@ -133,11 +143,6 @@ namespace VP_Project
         {
             if (Session.isPlaying)
             {
-                NowPlayingName.Text = Session.NowPlaying.Name;
-                NowPlayingArtist.Text = Session.NowPlaying.Artist;
-                NowPlayingCover.BackgroundImage = Image.FromStream(WC.OpenRead(Session.NowPlaying.Cover_URL));
-                NowPlayingCover.BorderStyle = BorderStyle.None;
-
                 StatusLbl.Text = "NOW PLAYING";
                 PlayStopBtn.BackgroundImage = new Bitmap(VP_Project.Properties.Resources.stop_100px);
             }

@@ -68,15 +68,15 @@ namespace VP_Project.Controllers
                 string sql2 = "SELECT * FROM tracks INNER JOIN user_collections ON tracks.track_id = user_collections.track_id WHERE playlist_id=" + Playlist.PlaylistID;
                 MySqlDataReader data2 = executeQuery(sql2);
 
-                while(data.Read())
+                while(data2.Read())
                 {
                     Track track = new Track();
-                    track.TrackID = data.GetString(0);
-                    track.Name = data.GetString(1);
-                    track.Artist = data.GetString(2);
-                    track.Duration = data.GetString(3);
-                    track.Cover_URL = data.GetString(4);
-                    track.URL = data.GetString(5);
+                    track.TrackID = data2.GetString(0);
+                    track.Name = data2.GetString(1);
+                    track.Artist = data2.GetString(2);
+                    track.Duration = data2.GetString(3);
+                    track.Cover_URL = data2.GetString(4);
+                    track.URL = data2.GetString(5);
 
                     Playlist.Tracks.Add(track);
                 }
@@ -144,6 +144,53 @@ namespace VP_Project.Controllers
         public void insertTrackInPlaylist(Playlist playlist, Track track)
         {
             string sql = "INSERT INTO `user_collections` (`playlist_id`,`track_id`) VALUES('"+playlist.PlaylistID+"','"+track.TrackID+"');";
+            MySqlDataReader data = executeQuery(sql);
+            Database.closeConnection();
+        }
+
+        public void createNewPlaylist(String playlistName, String ActiveUserID)
+        {
+            string sql = "INSERT INTO `playlists` (`name`, `user_id`) VALUES('"+playlistName+"','"+ActiveUserID+"');";
+            MySqlDataReader data = executeQuery(sql);
+            Database.closeConnection();
+        }
+
+        public String retrieveUserIdFromEmail(String email)
+        {
+            String userId = "";
+            string sql = "SELECT user_id FROM users WHERE email='" + email + "';";
+            MySqlDataReader data = executeQuery(sql);
+
+            while(data.Read())
+                userId = data.GetString(0);
+            Database.closeConnection();
+
+            return userId;
+        }
+
+        public String retrieveUserEmailFromId(String userId)
+        {
+            String userEmail = "";
+            string sql = "SELECT email FROM users WHERE user_id='" + userId+ "';";
+            MySqlDataReader data = executeQuery(sql);
+
+            while (data.Read())
+                userEmail = data.GetString(0);
+            Database.closeConnection();
+
+            return userEmail;
+        }
+
+        public void updateCollaborator(Playlist playlist, String userId)
+        {
+            string sql = "UPDATE playlists SET collaborator_id='" + userId + "' WHERE playlist_id=" + playlist.PlaylistID;
+            MySqlDataReader data = executeQuery(sql);
+            Database.closeConnection();
+        }
+
+        public void removePlaylistFromDB(Playlist playlist)
+        {
+            string sql = "DELETE FROM playlists WHERE playlist_id=" + playlist.PlaylistID; // :'(
             MySqlDataReader data = executeQuery(sql);
             Database.closeConnection();
         }

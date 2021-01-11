@@ -27,17 +27,28 @@ namespace VP_Project.Views.Mini_Forms
         private void SelectPlaylistForm_Load(object sender, EventArgs e)
         {
             foreach (Playlist playlist in my_playlists)
-                PlaylistsLbx.Items.Add(playlist.Name);
+                PlaylistsLbx.Items.Add(playlist.Name + "\t" + playlist.NoOfTracks + " Tracks");
         }
 
-        private void AddTrackBtn_Click(object sender, EventArgs e)
+        private void AddTrackToPlaylistBtn_Click(object sender, EventArgs e)
         {
             Playlist selected_playlist = my_playlists.ElementAt(PlaylistsLbx.SelectedIndex);
             Track selected_track = Session.NowPlaying;
             DBO.addTrackToPlaylist(selected_playlist, selected_track);
+            DBO.loadUserData();
 
             MessageBox.Show("Track added to playlist.", "Success");
-            this.Dispose();
+        }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void SelectPlaylistForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            HomeScreen HS = new HomeScreen();
+            HS.Show();
         }
     }
 }

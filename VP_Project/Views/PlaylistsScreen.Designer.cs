@@ -56,8 +56,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ExitBtn = new System.Windows.Forms.Label();
-            this.DeleteBtn = new System.Windows.Forms.PictureBox();
-            this.CollaboratorsBtn = new System.Windows.Forms.PictureBox();
             this.CreateBtn = new System.Windows.Forms.PictureBox();
             this.Playlist3Tracks = new System.Windows.Forms.Label();
             this.Playlist3Cover = new System.Windows.Forms.PictureBox();
@@ -81,8 +79,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DeleteBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CollaboratorsBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreateBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playlist3Cover)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playlist2Cover)).BeginInit();
@@ -238,13 +234,11 @@
             this.Playlist1Tracks.Font = new System.Drawing.Font("Montserrat", 8F);
             this.Playlist1Tracks.Location = new System.Drawing.Point(338, 204);
             this.Playlist1Tracks.Name = "Playlist1Tracks";
-            this.Playlist1Tracks.Size = new System.Drawing.Size(67, 20);
+            this.Playlist1Tracks.Size = new System.Drawing.Size(0, 20);
             this.Playlist1Tracks.TabIndex = 27;
-            this.Playlist1Tracks.Text = "0 Tracks";
             // 
             // Playlist1Cover
             // 
-            this.Playlist1Cover.BackgroundImage = global::VP_Project.Properties.Resources.playlist_96px;
             this.Playlist1Cover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Playlist1Cover.InitialImage = null;
             this.Playlist1Cover.Location = new System.Drawing.Point(274, 175);
@@ -260,9 +254,8 @@
             this.Playlist1Name.Font = new System.Drawing.Font("Montserrat SemiBold", 10F);
             this.Playlist1Name.Location = new System.Drawing.Point(338, 180);
             this.Playlist1Name.Name = "Playlist1Name";
-            this.Playlist1Name.Size = new System.Drawing.Size(48, 24);
+            this.Playlist1Name.Size = new System.Drawing.Size(0, 24);
             this.Playlist1Name.TabIndex = 25;
-            this.Playlist1Name.Text = "Title";
             this.Playlist1Name.Click += new System.EventHandler(this.Playlist1Name_Click);
             // 
             // label7
@@ -393,8 +386,6 @@
             this.panel3.BackgroundImage = global::VP_Project.Properties.Resources.vector_creator__2_;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel3.Controls.Add(this.ExitBtn);
-            this.panel3.Controls.Add(this.DeleteBtn);
-            this.panel3.Controls.Add(this.CollaboratorsBtn);
             this.panel3.Controls.Add(this.CreateBtn);
             this.panel3.Controls.Add(this.Playlist3Tracks);
             this.panel3.Controls.Add(this.Playlist3Cover);
@@ -419,28 +410,6 @@
             this.ExitBtn.Text = "X";
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
-            // DeleteBtn
-            // 
-            this.DeleteBtn.BackgroundImage = global::VP_Project.Properties.Resources.delete_bin_96px;
-            this.DeleteBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.DeleteBtn.InitialImage = null;
-            this.DeleteBtn.Location = new System.Drawing.Point(392, 245);
-            this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(30, 24);
-            this.DeleteBtn.TabIndex = 46;
-            this.DeleteBtn.TabStop = false;
-            // 
-            // CollaboratorsBtn
-            // 
-            this.CollaboratorsBtn.BackgroundImage = global::VP_Project.Properties.Resources.staff_48px1;
-            this.CollaboratorsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.CollaboratorsBtn.InitialImage = null;
-            this.CollaboratorsBtn.Location = new System.Drawing.Point(356, 245);
-            this.CollaboratorsBtn.Name = "CollaboratorsBtn";
-            this.CollaboratorsBtn.Size = new System.Drawing.Size(30, 24);
-            this.CollaboratorsBtn.TabIndex = 45;
-            this.CollaboratorsBtn.TabStop = false;
-            // 
             // CreateBtn
             // 
             this.CreateBtn.BackgroundImage = global::VP_Project.Properties.Resources.add_to_playlist;
@@ -451,6 +420,7 @@
             this.CreateBtn.Size = new System.Drawing.Size(30, 24);
             this.CreateBtn.TabIndex = 44;
             this.CreateBtn.TabStop = false;
+            this.CreateBtn.Click += new System.EventHandler(this.CreateBtn_Click);
             // 
             // Playlist3Tracks
             // 
@@ -557,8 +527,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DeleteBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CollaboratorsBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreateBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playlist3Cover)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playlist2Cover)).EndInit();
@@ -604,8 +572,6 @@
         private System.Windows.Forms.ContextMenuStrip UserMenu;
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
         private System.Windows.Forms.PictureBox CreateBtn;
-        private System.Windows.Forms.PictureBox CollaboratorsBtn;
-        private System.Windows.Forms.PictureBox DeleteBtn;
         private System.Windows.Forms.Label ExitBtn;
 
     }

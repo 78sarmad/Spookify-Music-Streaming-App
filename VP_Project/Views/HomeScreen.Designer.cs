@@ -235,9 +235,8 @@
             this.Track1Artist.Font = new System.Drawing.Font("Montserrat", 8F);
             this.Track1Artist.Location = new System.Drawing.Point(338, 204);
             this.Track1Artist.Name = "Track1Artist";
-            this.Track1Artist.Size = new System.Drawing.Size(48, 20);
+            this.Track1Artist.Size = new System.Drawing.Size(0, 20);
             this.Track1Artist.TabIndex = 27;
-            this.Track1Artist.Text = "Artist";
             // 
             // Track1Cover
             // 
@@ -256,9 +255,8 @@
             this.Track1Name.Font = new System.Drawing.Font("Montserrat SemiBold", 10F);
             this.Track1Name.Location = new System.Drawing.Point(338, 180);
             this.Track1Name.Name = "Track1Name";
-            this.Track1Name.Size = new System.Drawing.Size(48, 24);
+            this.Track1Name.Size = new System.Drawing.Size(0, 24);
             this.Track1Name.TabIndex = 25;
-            this.Track1Name.Text = "Title";
             this.Track1Name.Click += new System.EventHandler(this.Track1Name_Click);
             // 
             // label7
@@ -438,9 +436,8 @@
             this.Track1Duration.Font = new System.Drawing.Font("Montserrat SemiBold", 9F);
             this.Track1Duration.Location = new System.Drawing.Point(558, 305);
             this.Track1Duration.Name = "Track1Duration";
-            this.Track1Duration.Size = new System.Drawing.Size(42, 21);
+            this.Track1Duration.Size = new System.Drawing.Size(0, 21);
             this.Track1Duration.TabIndex = 31;
-            this.Track1Duration.Text = "3:03";
             // 
             // Track3Artist
             // 
