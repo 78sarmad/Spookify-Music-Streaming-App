@@ -153,6 +153,16 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_bin_96px {
+            get {
+                object obj = ResourceManager.GetObject("delete_bin_96px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap download {
             get {
                 object obj = ResourceManager.GetObject("download", resourceCulture);
@@ -283,6 +293,16 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap playlist_96px {
+            get {
+                object obj = ResourceManager.GetObject("playlist_96px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap playlisttt {
             get {
                 object obj = ResourceManager.GetObject("playlisttt", resourceCulture);
@@ -376,6 +396,16 @@ namespace VP_Project.Properties {
         internal static System.Drawing.Bitmap staff_48px {
             get {
                 object obj = ResourceManager.GetObject("staff_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap staff_48px1 {
+            get {
+                object obj = ResourceManager.GetObject("staff_48px1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

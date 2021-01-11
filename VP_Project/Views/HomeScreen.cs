@@ -22,23 +22,25 @@ namespace VP_Project
         private List<Track> new_tracks;
         private Track track1, track2, track3;
         private Media_Functions MEF;
-        private bool isTrackSelected;
 
         public HomeScreen()
         {
             InitializeComponent();
             WC = new WebClient();
             DBO = new Operations();
+            DBO.loadUserData();
 
-            new_tracks = new List<Track>();
+            new_tracks = DBO.loadNewTracks();
             MEF = new Media_Functions();
-            isTrackSelected = false;
+            Session.isTrackLoaded = false;
         }
 
         private void HomeScreen_Load(object sender, EventArgs e)
         {
-            SignedInTitle.Text = Session.ActiveUserName;
-            new_tracks = DBO.loadNewTracks();
+            if (Session.isTrackLoaded)
+                setNowPlaying();
+
+            SignedInTitle.Text = Session.ActiveUser.Name;
 
             if (new_tracks.Count > 0)
             {
@@ -48,26 +50,26 @@ namespace VP_Project
                 Track1Name.Text = track1.Name;
                 Track1Artist.Text = track1.Artist;
                 Track1Duration.Text = track1.Duration;
-            }
-            
-            if (new_tracks.Count > 1)
-            {
-                track2 = new_tracks.ElementAt(1);
 
-                Track2Cover.BackgroundImage = Image.FromStream(WC.OpenRead(track2.Cover_URL));
-                Track2Name.Text = track2.Name;
-                Track2Artist.Text = track2.Artist;
-                Track2Duration.Text = track2.Duration;
-            }
-            
-            if (new_tracks.Count > 2)
-            {
-                track3 = new_tracks.ElementAt(2);
+                if (new_tracks.Count > 1)
+                {
+                    track2 = new_tracks.ElementAt(1);
 
-                Track3Cover.BackgroundImage = Image.FromStream(WC.OpenRead(track3.Cover_URL));
-                Track3Name.Text = track3.Name;
-                Track3Artist.Text = track3.Artist;
-                Track3Duration.Text = track3.Duration;
+                    Track2Cover.BackgroundImage = Image.FromStream(WC.OpenRead(track2.Cover_URL));
+                    Track2Name.Text = track2.Name;
+                    Track2Artist.Text = track2.Artist;
+                    Track2Duration.Text = track2.Duration;
+
+                    if (new_tracks.Count > 2)
+                    {
+                        track3 = new_tracks.ElementAt(2);
+
+                        Track3Cover.BackgroundImage = Image.FromStream(WC.OpenRead(track3.Cover_URL));
+                        Track3Name.Text = track3.Name;
+                        Track3Artist.Text = track3.Artist;
+                        Track3Duration.Text = track3.Duration;
+                    }
+                }
             }
         }
 
@@ -76,7 +78,7 @@ namespace VP_Project
             Session.NowPlaying = track1;
             setSyncLabel();
             MEF.loadMusic();
-            refreshPlayer();
+            setNowPlaying();
         }
 
         private void Track1Name_Click(object sender, EventArgs e)
@@ -84,25 +86,25 @@ namespace VP_Project
             Session.NowPlaying = track1;
             setSyncLabel();
             MEF.loadMusic();
-            refreshPlayer();
+            setNowPlaying();
         }
 
         private void Track2Cover_Click(object sender, EventArgs e)
         {
             Session.NowPlaying = track2;
-            refreshPlayer();
+            setNowPlaying();
             setSyncLabel();
             MEF.loadMusic();
-            refreshPlayer();
+            setNowPlaying();
         }
 
         private void Track2Name_Click(object sender, EventArgs e)
         {
             Session.NowPlaying = track2;
-            refreshPlayer();
+            setNowPlaying();
             setSyncLabel();
             MEF.loadMusic();
-            refreshPlayer();
+            setNowPlaying();
         }
 
         private void Track3Cover_Click(object sender, EventArgs e)
@@ -110,7 +112,7 @@ namespace VP_Project
             Session.NowPlaying = track3;
             setSyncLabel();
             MEF.loadMusic();
-            refreshPlayer();
+            setNowPlaying();
         }
 
         private void Track3Name_Click(object sender, EventArgs e)
@@ -118,47 +120,49 @@ namespace VP_Project
             Session.NowPlaying = track3;
             setSyncLabel();
             MEF.loadMusic();
-            refreshPlayer();
+            setNowPlaying();
         }
 
         private void setSyncLabel()
         {
-            isTrackSelected = true;
+            Session.isTrackLoaded = true;
             StatusLbl.Text = "SYNCING TRACK...";
-
-            NowPlayingName.Text = Session.NowPlaying.Name;
-            NowPlayingArtist.Text = Session.NowPlaying.Artist;
-            NowPlayingCover.BackgroundImage = Image.FromStream(WC.OpenRead(Session.NowPlaying.Cover_URL));
-            NowPlayingCover.BorderStyle = BorderStyle.None;
         }
 
-        private void refreshPlayer()
+        private void setNowPlaying()
         {
-            PlayStopBtn.BackgroundImage = new Bitmap(VP_Project.Properties.Resources.play_blue);
-
             if (Session.isPlaying)
             {
+                NowPlayingName.Text = Session.NowPlaying.Name;
+                NowPlayingArtist.Text = Session.NowPlaying.Artist;
+                NowPlayingCover.BackgroundImage = Image.FromStream(WC.OpenRead(Session.NowPlaying.Cover_URL));
+                NowPlayingCover.BorderStyle = BorderStyle.None;
+
                 StatusLbl.Text = "NOW PLAYING";
                 PlayStopBtn.BackgroundImage = new Bitmap(VP_Project.Properties.Resources.stop_100px);
+            }
+            else
+            {
+                PlayStopBtn.BackgroundImage = new Bitmap(VP_Project.Properties.Resources.play_blue);
             }
         }
 
         private void PlayStopBtn_Click(object sender, EventArgs e)
         {
-            if (isTrackSelected)
+            if (Session.isTrackLoaded)
             {
                 if (Session.isPlaying)
                     MEF.stopMusic();
                 else
                     MEF.playMusic();
 
-                refreshPlayer();
+                setNowPlaying();
             }
         }
 
         private void ShareBtn_Click(object sender, EventArgs e)
         {
-            if (isTrackSelected)
+            if (Session.isTrackLoaded)
             {
                 MessageBox.Show("Name: " + Session.NowPlaying.Name + "\nArtist: " + Session.NowPlaying.Artist + "\nStream Link: " + Session.NowPlaying.URL, "Share Track");
             }
@@ -168,12 +172,12 @@ namespace VP_Project
         {
             PlaylistsScreen PLS = new PlaylistsScreen();
             PLS.Show();
-            this.Hide();
+            this.Dispose();
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            if (isTrackSelected)
+            if (Session.isTrackLoaded)
             {
                 SelectPlaylistForm SPF = new SelectPlaylistForm();
                 SPF.Show();
@@ -197,6 +201,11 @@ namespace VP_Project
         private void UserIcon_Click(object sender, EventArgs e)
         {
             UserMenu.Show(Cursor.Position);
+        }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

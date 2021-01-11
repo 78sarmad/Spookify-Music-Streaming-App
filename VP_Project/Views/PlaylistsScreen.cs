@@ -4,17 +4,207 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VP_Project.Controllers;
+using VP_Project.Models;
+using VP_Project.Views.Mini_Forms;
 
 namespace VP_Project
 {
     public partial class PlaylistsScreen : Form
     {
+        WebClient WC;
+        Operations DBO;
+
+        private List<Track> new_tracks;
+        private Playlist playlist1, playlist2, playlist3;
+        private Media_Functions MEF;
+
         public PlaylistsScreen()
         {
             InitializeComponent();
+            WC = new WebClient();
+            DBO = new Operations();
+
+            new_tracks = new List<Track>();
+            MEF = new Media_Functions();
+        }
+
+        private void PlaylistsScreen_Load(object sender, EventArgs e)
+        {
+            if (Session.isTrackLoaded)
+                setNowPlaying();
+
+            SignedInTitle.Text = Session.ActiveUser.Name;
+
+            int playlistCount = Session.ActiveUser.Playlists.Count;
+
+            if (playlistCount > 0)
+            {
+                playlist1 = Session.ActiveUser.Playlists.ElementAt(0);
+
+                Playlist1Name.Text = playlist1.Name;
+                Playlist1Tracks.Text = playlist1.NoOfTracks;
+
+                if (playlistCount > 1)
+                {
+                    playlist2 = Session.ActiveUser.Playlists.ElementAt(1);
+
+                    PlayStopBtn.BackgroundImage = new Bitmap(VP_Project.Properties.Resources.playlist_96px);
+                    Playlist1Name.Text = playlist1.Name;
+                    Playlist1Tracks.Text = playlist1.NoOfTracks;
+
+
+                    if (playlistCount > 2)
+                    {
+                        playlist3 = Session.ActiveUser.Playlists.ElementAt(2);
+
+                        PlayStopBtn.BackgroundImage = new Bitmap(VP_Project.Properties.Resources.playlist_96px);
+                        Playlist1Name.Text = playlist1.Name;
+                        Playlist1Tracks.Text = playlist1.NoOfTracks;
+                    }
+                }
+            }
+        }
+
+        private void Playlist1Cover_Click(object sender, EventArgs e)
+        {
+            setSyncLabel();
+            MEF.loadMusic();
+            setNowPlaying();
+        }
+
+        private void Playlist1Name_Click(object sender, EventArgs e)
+        {
+            setSyncLabel();
+            MEF.loadMusic();
+            setNowPlaying();
+        }
+
+        private void Playlist2Cover_Click(object sender, EventArgs e)
+        {
+            setNowPlaying();
+            setSyncLabel();
+            MEF.loadMusic();
+            setNowPlaying();
+        }
+
+        private void Playlist2Name_Click(object sender, EventArgs e)
+        {
+            setNowPlaying();
+            setSyncLabel();
+            MEF.loadMusic();
+            setNowPlaying();
+        }
+
+        private void Playlist3Cover_Click(object sender, EventArgs e)
+        {
+            setSyncLabel();
+            MEF.loadMusic();
+            setNowPlaying();
+        }
+
+        private void Playlist3Name_Click(object sender, EventArgs e)
+        {
+            setSyncLabel();
+            MEF.loadMusic();
+            setNowPlaying();
+        }
+
+        private void setSyncLabel()
+        {
+            Session.isTrackLoaded = true;
+            StatusLbl.Text = "SYNCING TRACK...";
+            setNowPlaying();
+        }
+
+        private void setNowPlaying()
+        {
+            if (Session.isPlaying)
+            {
+                NowPlayingName.Text = Session.NowPlaying.Name;
+                NowPlayingArtist.Text = Session.NowPlaying.Artist;
+                NowPlayingCover.BackgroundImage = Image.FromStream(WC.OpenRead(Session.NowPlaying.Cover_URL));
+                NowPlayingCover.BorderStyle = BorderStyle.None;
+
+                StatusLbl.Text = "NOW PLAYING";
+                PlayStopBtn.BackgroundImage = new Bitmap(VP_Project.Properties.Resources.stop_100px);
+            }
+            else
+            {
+                PlayStopBtn.BackgroundImage = new Bitmap(VP_Project.Properties.Resources.play_blue);
+            }
+        }
+
+        private void PlayStopBtn_Click(object sender, EventArgs e)
+        {
+            if (Session.isTrackLoaded)
+            {
+                if (Session.isPlaying)
+                    MEF.stopMusic();
+                else
+                    MEF.playMusic();
+
+                setNowPlaying();
+            }
+        }
+
+        private void ShareBtn_Click(object sender, EventArgs e)
+        {
+            if (Session.isTrackLoaded)
+            {
+                MessageBox.Show("Name: " + Session.NowPlaying.Name + "\nArtist: " + Session.NowPlaying.Artist + "\nStream Link: " + Session.NowPlaying.URL, "Share Track");
+            }
+        }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            if (Session.isTrackLoaded)
+            {
+                SelectPlaylistForm SPF = new SelectPlaylistForm();
+                SPF.Show();
+            }
+        }
+
+        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DBO.signOut();
+
+            SignInScreen SIS = new SignInScreen();
+            SIS.Show();
+            this.Dispose();
+        }
+
+        private void SignedInTitle_Click(object sender, EventArgs e)
+        {
+            UserMenu.Show(Cursor.Position);
+        }
+
+        private void UserIcon_Click(object sender, EventArgs e)
+        {
+            UserMenu.Show(Cursor.Position);
+        }
+
+        private void PlaylistsScreen_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            HomeScreen HS = new HomeScreen();
+            HS.Show();
+            this.Dispose();
+        }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void DiscoverBtn_Click(object sender, EventArgs e)
+        {
+            HomeScreen HS = new HomeScreen();
+            HS.Show();
+            this.Dispose();
         }
     }
 }

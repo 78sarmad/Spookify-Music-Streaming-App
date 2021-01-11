@@ -22,10 +22,11 @@ namespace VP_Project.Controllers
             bool success = false;
             User user = DBQ.findUser(email, password);
 
-            if (user.UserID != null)
+            if (email == user.Email)
             {
-                Session.ActiveUserID = user.UserID;
-                Session.ActiveUserName = user.Name;
+                Session.ActiveUser.UserID = user.UserID;
+                Session.ActiveUser.Name = user.Name;
+                Session.ActiveUser.Email = user.Email;
                 success = true;
             }
 
@@ -46,10 +47,14 @@ namespace VP_Project.Controllers
 
         public void signOut()
         {
-            Session.ActiveUserID = "";
-            Session.ActiveUserName = "";
+            Session.ActiveUser = null;
             Session.NowPlaying = null;
             Session.ErrProv.Clear();
+        }
+
+        public void loadUserData()
+        {
+            Session.ActiveUser = DBQ.loadUserDataFromDB(Session.ActiveUser.UserID);
         }
 
         public List<Track> loadNewTracks()
@@ -60,7 +65,7 @@ namespace VP_Project.Controllers
 
         public List<Playlist> getPlaylists()
         {
-            List<Playlist> my_playlists = DBQ.retrievePlaylists();
+            List<Playlist> my_playlists = DBQ.retrievePlaylists(Session.ActiveUser.UserID);
             return my_playlists;
         }
 

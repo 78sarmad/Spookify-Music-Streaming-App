@@ -40,6 +40,54 @@ namespace VP_Project.Controllers
             return UserFromDB;
         }
 
+        public User loadUserDataFromDB(String ActiveUserID)
+        {
+            string sql = "SELECT * FROM users WHERE user_id=" + ActiveUserID;
+            MySqlDataReader data = executeQuery(sql);
+
+            User UserFromDB = new User();
+
+            while (data.Read())
+            {
+                UserFromDB.UserID = data.GetString(0);
+                UserFromDB.Name = data.GetString(1);
+                UserFromDB.Email = data.GetString(2);
+            }
+
+            sql = "SELECT * FROM playlists WHERE user_id=" + ActiveUserID + " OR collaborator_id=" + ActiveUserID;
+            data = executeQuery(sql);
+
+            while (data.Read())
+            {
+                Playlist Playlist = new Playlist();
+                Playlist.PlaylistID = data.GetString(0);
+                Playlist.Name = data.GetString(1);
+                Playlist.NoOfTracks = data.GetString(2);
+                Playlist.Collaborator = data.GetString(4);
+
+                string sql2 = "SELECT * FROM tracks INNER JOIN user_collections ON tracks.track_id = user_collections.track_id WHERE playlist_id=" + Playlist.PlaylistID;
+                MySqlDataReader data2 = executeQuery(sql2);
+
+                while(data.Read())
+                {
+                    Track track = new Track();
+                    track.TrackID = data.GetString(0);
+                    track.Name = data.GetString(1);
+                    track.Artist = data.GetString(2);
+                    track.Duration = data.GetString(3);
+                    track.Cover_URL = data.GetString(4);
+                    track.URL = data.GetString(5);
+
+                    Playlist.Tracks.Add(track);
+                }
+
+                UserFromDB.Playlists.Add(Playlist);
+            }
+            Database.closeConnection();
+
+            return UserFromDB;
+        }
+
         public void addUser(String name, String email, String password)
         {
             string sql = "INSERT INTO `users` (`name`,`email`, `pwd`) VALUES ('"+name+"','"+email+"','"+password+"')";
@@ -71,9 +119,9 @@ namespace VP_Project.Controllers
             return new_tracks;
         }
 
-        public List<Playlist> retrievePlaylists()
+        public List<Playlist> retrievePlaylists(String ActiveUserID)
         {
-            string sql = "SELECT * FROM playlists WHERE user_id=" + Session.ActiveUserID;
+            string sql = "SELECT * FROM playlists WHERE user_id=" + ActiveUserID;
             MySqlDataReader data = executeQuery(sql);
 
             List<Playlist> my_playlists = new List<Playlist>();

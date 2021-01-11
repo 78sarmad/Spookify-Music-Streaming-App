@@ -55,6 +55,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.ExitBtn = new System.Windows.Forms.Label();
             this.Track3Duration = new System.Windows.Forms.Label();
             this.Track2Duration = new System.Windows.Forms.Label();
             this.Track1Duration = new System.Windows.Forms.Label();
@@ -206,6 +207,7 @@
             // 
             // NowPlayingCover
             // 
+            this.NowPlayingCover.BackgroundImage = global::VP_Project.Properties.Resources.playlist_96px;
             this.NowPlayingCover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.NowPlayingCover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NowPlayingCover.InitialImage = null;
@@ -385,6 +387,7 @@
             // 
             this.panel3.BackgroundImage = global::VP_Project.Properties.Resources.vector_creator__2_;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Controls.Add(this.ExitBtn);
             this.panel3.Controls.Add(this.Track3Duration);
             this.panel3.Controls.Add(this.Track2Duration);
             this.panel3.Controls.Add(this.Track1Duration);
@@ -398,6 +401,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1018, 548);
             this.panel3.TabIndex = 30;
+            // 
+            // ExitBtn
+            // 
+            this.ExitBtn.AutoSize = true;
+            this.ExitBtn.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitBtn.ForeColor = System.Drawing.Color.Red;
+            this.ExitBtn.Location = new System.Drawing.Point(903, 111);
+            this.ExitBtn.Name = "ExitBtn";
+            this.ExitBtn.Size = new System.Drawing.Size(22, 24);
+            this.ExitBtn.TabIndex = 45;
+            this.ExitBtn.Text = "X";
+            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // Track3Duration
             // 
@@ -577,6 +592,7 @@
         private System.Windows.Forms.Label Track1Duration;
         private System.Windows.Forms.ContextMenuStrip UserMenu;
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
+        private System.Windows.Forms.Label ExitBtn;
 
     }
 }

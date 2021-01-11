@@ -56,6 +56,12 @@
     <Compile Include="Models\Session.cs" />
     <Compile Include="Models\Track.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Views\PlaylistsScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PlaylistsScreen.Designer.cs">
+      <DependentUpon>PlaylistsScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Mini Forms\SelectPlaylistForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,12 +86,6 @@
     <Compile Include="Views\ViewPlaylistScreen.Designer.cs">
       <DependentUpon>ViewPlaylistScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\PlaylistsScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\PlaylistsScreen.Designer.cs">
-      <DependentUpon>PlaylistsScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\HomeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +100,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Views\PlaylistsScreen.resx">
+      <DependentUpon>PlaylistsScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Mini Forms\SelectPlaylistForm.resx">
       <DependentUpon>SelectPlaylistForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,9 +114,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ViewPlaylistScreen.resx">
       <DependentUpon>ViewPlaylistScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\PlaylistsScreen.resx">
-      <DependentUpon>PlaylistsScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\HomeScreen.resx">
       <DependentUpon>HomeScreen.cs</DependentUpon>
@@ -251,6 +251,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\stop_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staff_48px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_bin_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playlist_96px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

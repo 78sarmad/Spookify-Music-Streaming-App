@@ -27,7 +27,6 @@ namespace VP_Project.Models
             {
                 conn.Open();
                 Console.WriteLine("Status: Connection established.");
-                
             }
             catch (Exception ex)
             {
