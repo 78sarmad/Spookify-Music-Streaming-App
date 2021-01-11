@@ -20,7 +20,7 @@ namespace VP_Project.Models
 
         public static void openConnection()
         {
-            string connStr = "server="+DBHost+";database="+DBName+";uid="+DBUser+";pwd="+DBPwd+";";
+            string connStr = @"server="+DBHost+";database="+DBName+";uid="+DBUser+";pwd="+DBPwd+";";
             conn = new MySqlConnection(connStr);
 
             try
@@ -43,10 +43,15 @@ namespace VP_Project.Models
         // checks if connection is open
         public static bool isConnValid()
         {
-            if (conn.State == ConnectionState.Open)
+            if (conn != null)
                 return true;
             else
                 return false;
+        }
+
+        public static MySqlConnection getConnection()
+        {
+            return conn;
         }
     }
 }

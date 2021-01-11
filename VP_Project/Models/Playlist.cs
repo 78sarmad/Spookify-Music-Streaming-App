@@ -11,13 +11,12 @@ namespace VP_Project.Models
         public String PlaylistID { get; set; }
         public String Name { get; set; }
         public String NoOfTracks { get; set; }
+        public String Collaborator { get; set; }
         public List<Track> tracks;
-        public List<String> collaborators;
 
         public Playlist()
         {
             tracks = new List<Track>();
-            collaborators = new List<String>();
         }
 
         public List<Track> Tracks
@@ -29,18 +28,6 @@ namespace VP_Project.Models
             set
             {
                 tracks = value;
-            }
-        }
-
-        public List<String> Collaborators
-        {
-            get
-            {
-                return collaborators;
-            }
-            set
-            {
-                collaborators = value;
             }
         }
     }

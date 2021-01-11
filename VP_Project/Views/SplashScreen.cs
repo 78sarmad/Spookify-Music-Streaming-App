@@ -16,20 +16,14 @@ namespace VP_Project
         public SplashScreen()
         {
             InitializeComponent();
+        }
 
-            Database.openConnection();
-            if (Database.isConnValid())
-                MessageBox.Show("Yep");
+        private void SplashScreen_Load(object sender, EventArgs e)
+        {
+            SignInScreen SIS = new SignInScreen();
+            SIS.Show();
 
-
-            HomeScreen HS = new HomeScreen();
-            HS.Show();
-
-            PlaylistsScreen PS = new PlaylistsScreen();
-            PS.Show();
-
-            ViewPlaylistScreen VPS = new ViewPlaylistScreen();
-            VPS.Show();
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)

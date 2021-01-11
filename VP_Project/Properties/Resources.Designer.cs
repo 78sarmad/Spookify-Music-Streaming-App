@@ -263,6 +263,16 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pause_48px {
+            get {
+                object obj = ResourceManager.GetObject("pause_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap play_blue {
             get {
                 object obj = ResourceManager.GetObject("play-blue", resourceCulture);
@@ -276,6 +286,16 @@ namespace VP_Project.Properties {
         internal static System.Drawing.Bitmap playlisttt {
             get {
                 object obj = ResourceManager.GetObject("playlisttt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap repeat_64px {
+            get {
+                object obj = ResourceManager.GetObject("repeat_64px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,9 +363,39 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap signup_in {
+            get {
+                object obj = ResourceManager.GetObject("signup-in", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap staff_48px {
             get {
                 object obj = ResourceManager.GetObject("staff_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stop_100px {
+            get {
+                object obj = ResourceManager.GetObject("stop_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap streaming_52px {
+            get {
+                object obj = ResourceManager.GetObject("streaming_52px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

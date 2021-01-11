@@ -8,22 +8,22 @@ namespace VP_Project.Models
 {
     public class Queue
     {
-        private List<Track> tracks_in_queue;
+        private List<Track> queued_tracks;
 
         public Queue()
         {
-            tracks_in_queue = new List<Track>();
+            queued_tracks = new List<Track>();
         }
 
-        public List<Track> Tracks_In_Queue
+        public List<Track> QueuedTracks
         {
             get
             {
-                return tracks_in_queue;
+                return queued_tracks;
             }
             set
             {
-                tracks_in_queue = value;
+                queued_tracks = value;
             }
         }
     }

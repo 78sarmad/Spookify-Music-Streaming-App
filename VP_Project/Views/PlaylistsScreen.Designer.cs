@@ -32,27 +32,27 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
@@ -145,113 +145,6 @@
             this.label15.TabIndex = 33;
             this.label15.Text = "Havana";
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Montserrat SemiBold", 8F);
-            this.label16.ForeColor = System.Drawing.Color.Navy;
-            this.label16.Location = new System.Drawing.Point(116, 10);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(114, 20);
-            this.label16.TabIndex = 31;
-            this.label16.Text = "NOW PLAYING";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Montserrat", 8F);
-            this.label9.Location = new System.Drawing.Point(338, 204);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 20);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "8 Tracks";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Montserrat SemiBold", 10F);
-            this.label8.Location = new System.Drawing.Point(338, 180);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 24);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Pop Music";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Montserrat SemiBold", 9F);
-            this.label7.ForeColor = System.Drawing.Color.Navy;
-            this.label7.Location = new System.Drawing.Point(780, 29);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 21);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "LOGGED IN";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Montserrat SemiBold", 12F);
-            this.label6.Location = new System.Drawing.Point(779, 50);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 27);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Haley Lu";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Montserrat SemiBold", 10F);
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(269, 136);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 24);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "PLAYLISTS";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Montserrat SemiBold", 12F);
-            this.label5.ForeColor = System.Drawing.Color.Navy;
-            this.label5.Location = new System.Drawing.Point(95, 228);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 27);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Playlists";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat SemiBold", 12F);
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(95, 180);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 27);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Discover";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat SemiBold", 10F);
-            this.label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label2.Location = new System.Drawing.Point(44, 136);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 24);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "MUSIC";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat SemiBold", 14F);
-            this.label1.Location = new System.Drawing.Point(117, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 33);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Spookify";
-            // 
             // pictureBox16
             // 
             this.pictureBox16.BackgroundImage = global::VP_Project.Properties.Resources.heart_100px;
@@ -307,6 +200,17 @@
             this.pictureBox12.TabIndex = 41;
             this.pictureBox12.TabStop = false;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Montserrat SemiBold", 8F);
+            this.label16.ForeColor = System.Drawing.Color.Navy;
+            this.label16.Location = new System.Drawing.Point(116, 10);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(114, 20);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "NOW PLAYING";
+            // 
             // pictureBox11
             // 
             this.pictureBox11.BackgroundImage = global::VP_Project.Properties.Resources.havana;
@@ -317,6 +221,16 @@
             this.pictureBox11.Size = new System.Drawing.Size(62, 62);
             this.pictureBox11.TabIndex = 34;
             this.pictureBox11.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Montserrat", 8F);
+            this.label9.Location = new System.Drawing.Point(338, 204);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 20);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "8 Tracks";
             // 
             // pictureBox5
             // 
@@ -329,6 +243,27 @@
             this.pictureBox5.TabIndex = 26;
             this.pictureBox5.TabStop = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Montserrat SemiBold", 10F);
+            this.label8.Location = new System.Drawing.Point(338, 180);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 24);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Pop Music";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Montserrat SemiBold", 9F);
+            this.label7.ForeColor = System.Drawing.Color.Navy;
+            this.label7.Location = new System.Drawing.Point(780, 29);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 21);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "LOGGED IN";
+            // 
             // pictureBox4
             // 
             this.pictureBox4.BackgroundImage = global::VP_Project.Properties.Resources.ghost2;
@@ -339,6 +274,28 @@
             this.pictureBox4.Size = new System.Drawing.Size(50, 50);
             this.pictureBox4.TabIndex = 23;
             this.pictureBox4.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Montserrat SemiBold", 12F);
+            this.label6.Location = new System.Drawing.Point(779, 50);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(102, 27);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Haley Lu";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Montserrat SemiBold", 10F);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(269, 136);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 24);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "PLAYLISTS";
             // 
             // pictureBox3
             // 
@@ -351,6 +308,17 @@
             this.pictureBox3.TabIndex = 20;
             this.pictureBox3.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Montserrat SemiBold", 12F);
+            this.label5.ForeColor = System.Drawing.Color.Navy;
+            this.label5.Location = new System.Drawing.Point(95, 228);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 27);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Playlists";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::VP_Project.Properties.Resources.black_headphones;
@@ -362,6 +330,28 @@
             this.pictureBox2.TabIndex = 18;
             this.pictureBox2.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Montserrat SemiBold", 12F);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(95, 180);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 27);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Discover";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat SemiBold", 10F);
+            this.label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label2.Location = new System.Drawing.Point(44, 136);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 24);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "MUSIC";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::VP_Project.Properties.Resources.logo;
@@ -372,6 +362,16 @@
             this.pictureBox1.Size = new System.Drawing.Size(63, 57);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat SemiBold", 14F);
+            this.label1.Location = new System.Drawing.Point(117, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 33);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Spookify";
             // 
             // panel3
             // 
@@ -494,7 +494,8 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PlaylistsScreen";
-            this.Text = "HomeScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "My Playlists";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

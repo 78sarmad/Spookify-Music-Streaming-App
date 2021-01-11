@@ -10,3 +10,6 @@ c:\users\78sar\documents\visual studio 2013\Projects\VP_Project\VP_Project\obj\D
 C:\Users\78sar\documents\visual studio 2013\Projects\VP_Project\VP_Project\obj\Debug\VP_Project.HomeScreen.resources
 C:\Users\78sar\documents\visual studio 2013\Projects\VP_Project\VP_Project\obj\Debug\VP_Project.PlaylistsScreen.resources
 C:\Users\78sar\documents\visual studio 2013\Projects\VP_Project\VP_Project\obj\Debug\VP_Project.ViewPlaylistScreen.resources
+C:\Users\78sar\documents\visual studio 2013\Projects\VP_Project\VP_Project\obj\Debug\VP_Project.SignInScreen.resources
+C:\Users\78sar\documents\visual studio 2013\Projects\VP_Project\VP_Project\obj\Debug\VP_Project.SignUpScreen.resources
+C:\Users\78sar\documents\visual studio 2013\Projects\VP_Project\VP_Project\obj\Debug\VP_Project.Views.Mini_Forms.SelectPlaylistForm.resources
