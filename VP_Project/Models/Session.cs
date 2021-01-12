@@ -21,5 +21,7 @@ namespace VP_Project.Models
         public static Track NowPlaying = new Track();
         public static bool isTrackLoaded = false;
         public static bool isPlaying = false;
+
+        public static List<Track> TracksInQueue = new List<Track>();
     }
 }

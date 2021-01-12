@@ -177,7 +177,7 @@ namespace VP_Project
         {
             PlaylistsScreen PLS = new PlaylistsScreen();
             PLS.Show();
-            this.Dispose();
+            this.Close();
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
@@ -195,7 +195,7 @@ namespace VP_Project
 
             SignInScreen SIS = new SignInScreen();
             SIS.Show();
-            this.Dispose();
+            this.Close();
         }
 
         private void SignedInTitle_Click(object sender, EventArgs e)

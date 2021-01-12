@@ -32,23 +32,26 @@ namespace VP_Project.Views.Mini_Forms
 
         private void AddTrackToPlaylistBtn_Click(object sender, EventArgs e)
         {
-            Playlist selected_playlist = my_playlists.ElementAt(PlaylistsLbx.SelectedIndex);
-            Track selected_track = Session.NowPlaying;
-            DBO.addTrackToPlaylist(selected_playlist, selected_track);
-            DBO.loadUserData();
+            if (PlaylistsLbx.SelectedIndex != -1)
+            {
+                Playlist selected_playlist = my_playlists.ElementAt(PlaylistsLbx.SelectedIndex);
+                Track selected_track = Session.NowPlaying;
+                DBO.addTrackToPlaylist(selected_playlist, selected_track);
+                DBO.loadUserData();
 
-            MessageBox.Show("Track added to playlist.", "Success");
+                MessageBox.Show("Track added to playlist.", "Success");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("No playlists selected. \nIf you do not see any playlists here, \nyou may want to create them from Playlists page.", "Error");
+                this.Close();
+            }
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void SelectPlaylistForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            HomeScreen HS = new HomeScreen();
-            HS.Show();
         }
     }
 }

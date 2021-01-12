@@ -38,7 +38,6 @@ namespace VP_Project
             SignedInTitle.Text = Session.ActiveUser.Name;
             if (Session.isTrackLoaded)
                 loadTrackInfo();
-
             if (Session.isPlaying)
                 setNowPlaying();
 
@@ -73,42 +72,42 @@ namespace VP_Project
         {
             ViewPlaylistScreen VPS = new ViewPlaylistScreen(playlist1);
             VPS.Show();
-            this.Dispose();
+            this.Close();
         }
 
         private void Playlist1Name_Click(object sender, EventArgs e)
         {
             ViewPlaylistScreen VPS = new ViewPlaylistScreen(playlist1);
             VPS.Show();
-            this.Dispose();
+            this.Close();
         }
 
         private void Playlist2Cover_Click(object sender, EventArgs e)
         {
             ViewPlaylistScreen VPS = new ViewPlaylistScreen(playlist2);
             VPS.Show();
-            this.Dispose();
+            this.Close();
         }
 
         private void Playlist2Name_Click(object sender, EventArgs e)
         {
             ViewPlaylistScreen VPS = new ViewPlaylistScreen(playlist2);
             VPS.Show();
-            this.Dispose();
+            this.Close();
         }
 
         private void Playlist3Cover_Click(object sender, EventArgs e)
         {
             ViewPlaylistScreen VPS = new ViewPlaylistScreen(playlist3);
             VPS.Show();
-            this.Dispose();
+            this.Close();
         }
 
         private void Playlist3Name_Click(object sender, EventArgs e)
         {
             ViewPlaylistScreen VPS = new ViewPlaylistScreen(playlist3);
             VPS.Show();
-            this.Dispose();
+            this.Close();
         }
 
         private void loadTrackInfo()
@@ -176,7 +175,7 @@ namespace VP_Project
 
             SignInScreen SIS = new SignInScreen();
             SIS.Show();
-            this.Dispose();
+            this.Close();
         }
 
         private void SignedInTitle_Click(object sender, EventArgs e)
@@ -189,13 +188,6 @@ namespace VP_Project
             UserMenu.Show(Cursor.Position);
         }
 
-        private void PlaylistsScreen_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            HomeScreen HS = new HomeScreen();
-            HS.Show();
-            this.Dispose();
-        }
-
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
@@ -205,13 +197,14 @@ namespace VP_Project
         {
             HomeScreen HS = new HomeScreen();
             HS.Show();
-            this.Dispose();
+            this.Close();
         }
 
         private void CreateBtn_Click(object sender, EventArgs e)
         {
             CreatePlaylistForm CPF = new CreatePlaylistForm();
             CPF.Show();
+            this.Close();
         }
     }
 }

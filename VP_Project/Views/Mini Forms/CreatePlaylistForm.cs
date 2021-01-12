@@ -27,12 +27,18 @@ namespace VP_Project.Views.Mini_Forms
             DBO.createPlaylist(PlaylistNameInput.Text);
             DBO.loadUserData();
             MessageBox.Show("Playlist created.", "Success");
-            this.Dispose();
+            this.Close();
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CreatePlaylistForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            PlaylistsScreen PS = new PlaylistsScreen();
+            PS.Show();
         }
     }
 }

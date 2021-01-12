@@ -29,23 +29,24 @@ namespace VP_Project.Views.Mini_Forms
             DBO.deletePlaylist(Playlist);
             DBO.loadUserData();
             MessageBox.Show("Playlist has been deleted.", "Success");
+
+            PlaylistsScreen PS = new PlaylistsScreen();
+            PS.Show();
             this.Close();
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
         {
+            ViewPlaylistScreen VPS = new ViewPlaylistScreen(Playlist);
+            VPS.Show();
             this.Close();
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
+            ViewPlaylistScreen VPS = new ViewPlaylistScreen(Playlist);
+            VPS.Show();
             this.Close();
-        }
-
-        private void DeletePlaylistForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            PlaylistsScreen PS = new PlaylistsScreen();
-            PS.Show();
         }
     }
 }

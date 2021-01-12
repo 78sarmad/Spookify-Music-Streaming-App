@@ -52,7 +52,6 @@
     <Compile Include="Controllers\Media_Functions.cs" />
     <Compile Include="Models\Database.cs" />
     <Compile Include="Models\Playlist.cs" />
-    <Compile Include="Models\Queue.cs" />
     <Compile Include="Models\Session.cs" />
     <Compile Include="Models\Track.cs" />
     <Compile Include="Models\User.cs" />

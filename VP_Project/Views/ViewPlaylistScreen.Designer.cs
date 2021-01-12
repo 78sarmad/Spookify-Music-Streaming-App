@@ -50,7 +50,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.PlaylistsBtn = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.DiscoverBtn = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -70,6 +70,7 @@
             this.Track2Name = new System.Windows.Forms.Label();
             this.UserMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PlayPlaylistBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShareBtn)).BeginInit();
@@ -106,7 +107,7 @@
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.PlaylistsBtn);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.DiscoverBtn);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
@@ -343,16 +344,17 @@
             this.pictureBox2.TabIndex = 18;
             this.pictureBox2.TabStop = false;
             // 
-            // label3
+            // DiscoverBtn
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat SemiBold", 12F);
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(95, 180);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 27);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Discover";
+            this.DiscoverBtn.AutoSize = true;
+            this.DiscoverBtn.Font = new System.Drawing.Font("Montserrat SemiBold", 12F);
+            this.DiscoverBtn.ForeColor = System.Drawing.Color.Black;
+            this.DiscoverBtn.Location = new System.Drawing.Point(95, 180);
+            this.DiscoverBtn.Name = "DiscoverBtn";
+            this.DiscoverBtn.Size = new System.Drawing.Size(102, 27);
+            this.DiscoverBtn.TabIndex = 17;
+            this.DiscoverBtn.Text = "Discover";
+            this.DiscoverBtn.Click += new System.EventHandler(this.DiscoverBtn_Click);
             // 
             // label2
             // 
@@ -390,6 +392,7 @@
             // 
             this.panel3.BackgroundImage = global::VP_Project.Properties.Resources.vector_creator__2_;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Controls.Add(this.PlayPlaylistBtn);
             this.panel3.Controls.Add(this.ViewMoreLbl);
             this.panel3.Controls.Add(this.DeleteBtn);
             this.panel3.Controls.Add(this.ExitBtn);
@@ -426,7 +429,7 @@
             this.DeleteBtn.BackgroundImage = global::VP_Project.Properties.Resources.delete_bin_96px;
             this.DeleteBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.DeleteBtn.InitialImage = null;
-            this.DeleteBtn.Location = new System.Drawing.Point(411, 245);
+            this.DeleteBtn.Location = new System.Drawing.Point(564, 245);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(30, 24);
             this.DeleteBtn.TabIndex = 48;
@@ -450,7 +453,7 @@
             this.CollaboratorsBtn.BackgroundImage = global::VP_Project.Properties.Resources.staff_48px1;
             this.CollaboratorsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CollaboratorsBtn.InitialImage = null;
-            this.CollaboratorsBtn.Location = new System.Drawing.Point(375, 245);
+            this.CollaboratorsBtn.Location = new System.Drawing.Point(528, 245);
             this.CollaboratorsBtn.Name = "CollaboratorsBtn";
             this.CollaboratorsBtn.Size = new System.Drawing.Size(30, 24);
             this.CollaboratorsBtn.TabIndex = 47;
@@ -559,6 +562,19 @@
             this.signOutToolStripMenuItem.Text = "Sign Out";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
+            // PlayPlaylistBtn
+            // 
+            this.PlayPlaylistBtn.BackColor = System.Drawing.Color.Navy;
+            this.PlayPlaylistBtn.Font = new System.Drawing.Font("Montserrat SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.PlayPlaylistBtn.ForeColor = System.Drawing.Color.White;
+            this.PlayPlaylistBtn.Location = new System.Drawing.Point(380, 245);
+            this.PlayPlaylistBtn.Name = "PlayPlaylistBtn";
+            this.PlayPlaylistBtn.Size = new System.Drawing.Size(80, 28);
+            this.PlayPlaylistBtn.TabIndex = 54;
+            this.PlayPlaylistBtn.Text = "PLAY";
+            this.PlayPlaylistBtn.UseVisualStyleBackColor = false;
+            this.PlayPlaylistBtn.Click += new System.EventHandler(this.PlayPlaylistBtn_Click);
+            // 
             // ViewPlaylistScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -607,7 +623,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label PlaylistsBtn;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label DiscoverBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
@@ -640,6 +656,7 @@
         private System.Windows.Forms.PictureBox DeleteBtn;
         private System.Windows.Forms.PictureBox CollaboratorsBtn;
         private System.Windows.Forms.Label ViewMoreLbl;
+        private System.Windows.Forms.Button PlayPlaylistBtn;
 
     }
 }

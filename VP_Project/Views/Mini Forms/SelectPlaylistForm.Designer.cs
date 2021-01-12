@@ -111,7 +111,6 @@
             this.Name = "SelectPlaylistForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SelectPlaylistForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SelectPlaylistForm_FormClosed);
             this.Load += new System.EventHandler(this.SelectPlaylistForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

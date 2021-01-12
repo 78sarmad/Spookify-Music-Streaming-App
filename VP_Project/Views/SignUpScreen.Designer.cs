@@ -70,16 +70,17 @@
             this.label6.Font = new System.Drawing.Font("Montserrat SemiBold", 10F);
             this.label6.Location = new System.Drawing.Point(601, 303);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 24);
+            this.label6.Size = new System.Drawing.Size(75, 24);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Email:";
+            this.label6.Text = "Email: *";
             // 
             // EmailInput
             // 
-            this.EmailInput.Location = new System.Drawing.Point(716, 306);
+            this.EmailInput.Location = new System.Drawing.Point(727, 306);
             this.EmailInput.Name = "EmailInput";
-            this.EmailInput.Size = new System.Drawing.Size(210, 22);
+            this.EmailInput.Size = new System.Drawing.Size(199, 22);
             this.EmailInput.TabIndex = 14;
+            this.EmailInput.TextChanged += new System.EventHandler(this.EmailInput_TextChanged);
             // 
             // AltSignInBtn
             // 
@@ -123,16 +124,17 @@
             this.label3.Font = new System.Drawing.Font("Montserrat SemiBold", 10F);
             this.label3.Location = new System.Drawing.Point(601, 339);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 24);
+            this.label3.Size = new System.Drawing.Size(112, 24);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Password:";
+            this.label3.Text = "Password: *";
             // 
             // PasswordInput
             // 
-            this.PasswordInput.Location = new System.Drawing.Point(716, 342);
+            this.PasswordInput.Location = new System.Drawing.Point(727, 342);
             this.PasswordInput.Name = "PasswordInput";
-            this.PasswordInput.Size = new System.Drawing.Size(210, 22);
+            this.PasswordInput.Size = new System.Drawing.Size(199, 22);
             this.PasswordInput.TabIndex = 9;
+            this.PasswordInput.TextChanged += new System.EventHandler(this.PasswordInput_TextChanged);
             // 
             // label2
             // 
@@ -140,16 +142,17 @@
             this.label2.Font = new System.Drawing.Font("Montserrat SemiBold", 10F);
             this.label2.Location = new System.Drawing.Point(601, 266);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 24);
+            this.label2.Size = new System.Drawing.Size(79, 24);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Name:";
+            this.label2.Text = "Name: *";
             // 
             // NameInput
             // 
-            this.NameInput.Location = new System.Drawing.Point(716, 269);
+            this.NameInput.Location = new System.Drawing.Point(727, 269);
             this.NameInput.Name = "NameInput";
-            this.NameInput.Size = new System.Drawing.Size(210, 22);
+            this.NameInput.Size = new System.Drawing.Size(199, 22);
             this.NameInput.TabIndex = 7;
+            this.NameInput.TextChanged += new System.EventHandler(this.NameInput_TextChanged);
             // 
             // panel2
             // 

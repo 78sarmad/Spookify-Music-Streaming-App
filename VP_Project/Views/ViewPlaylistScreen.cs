@@ -31,7 +31,6 @@ namespace VP_Project
 
             this.Playlist = Playlist;
             MEF = new Media_Functions();
-            Session.isTrackLoaded = false;
         }
 
         private void ViewPlaylistScreen_Load(object sender, EventArgs e)
@@ -150,7 +149,7 @@ namespace VP_Project
         {
             loadTrackInfo();
             Session.isTrackLoaded = true;
-            StatusLbl.Text = "SYNCING Track...";
+            StatusLbl.Text = "SYNCING TRACK...";
         }
 
         private void setNowPlaying()
@@ -187,11 +186,18 @@ namespace VP_Project
             }
         }
 
+        private void DiscoverBtn_Click(object sender, EventArgs e)
+        {
+            HomeScreen HS = new HomeScreen();
+            HS.Show();
+            this.Close();
+        }
+
         private void PlaylistsBtn_Click(object sender, EventArgs e)
         {
             PlaylistsScreen PLS = new PlaylistsScreen();
             PLS.Show();
-            this.Dispose();
+            this.Close();
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
@@ -209,7 +215,7 @@ namespace VP_Project
 
             SignInScreen SIS = new SignInScreen();
             SIS.Show();
-            this.Dispose();
+            this.Close();
         }
 
         private void SignedInTitle_Click(object sender, EventArgs e)
@@ -231,12 +237,25 @@ namespace VP_Project
         {
             CollaboratorForm CF = new CollaboratorForm(Playlist);
             CF.Show();
+            this.Close();
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             DeletePlaylistForm DPF = new DeletePlaylistForm(Playlist);
             DPF.Show();
+            this.Close();
+        }
+
+        private void PlayPlaylistBtn_Click(object sender, EventArgs e)
+        {
+            foreach (Track track in Playlist.Tracks)
+                Session.TracksInQueue.Add(track);
+
+            Session.NowPlaying = Session.TracksInQueue.ElementAt(0);
+            setSyncLabel();
+            MEF.loadMusic();
+            setNowPlaying();
         }
     }
 }

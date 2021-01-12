@@ -22,6 +22,14 @@ namespace VP_Project.Controllers
 
         public void playMusic()
         {
+            if (Session.isTrackLoaded)
+            {
+                Session.Player = new System.Media.SoundPlayer();
+                Session.Player.LoadTimeout = 300000;
+                Session.Player.SoundLocation = Session.NowPlaying.URL;
+                Session.Player.LoadAsync();
+            }
+                
             Session.Player.Play();
             Session.isPlaying = true;
         }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.StatusLbl = new System.Windows.Forms.Label();
             this.AltSignUpBtn = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.SignInBtn = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.ExitBtn = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.StatusLbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +61,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1021, 573);
             this.panel1.TabIndex = 0;
+            // 
+            // StatusLbl
+            // 
+            this.StatusLbl.AutoSize = true;
+            this.StatusLbl.Font = new System.Drawing.Font("Montserrat", 9F);
+            this.StatusLbl.Location = new System.Drawing.Point(703, 361);
+            this.StatusLbl.Name = "StatusLbl";
+            this.StatusLbl.Size = new System.Drawing.Size(95, 21);
+            this.StatusLbl.TabIndex = 14;
+            this.StatusLbl.Text = "Signing In...";
+            this.StatusLbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.StatusLbl.Visible = false;
             // 
             // AltSignUpBtn
             // 
@@ -114,6 +126,7 @@
             this.PasswordInput.Name = "PasswordInput";
             this.PasswordInput.Size = new System.Drawing.Size(210, 22);
             this.PasswordInput.TabIndex = 9;
+            this.PasswordInput.TextChanged += new System.EventHandler(this.PasswordInput_TextChanged);
             // 
             // label2
             // 
@@ -131,6 +144,7 @@
             this.EmailInput.Name = "EmailInput";
             this.EmailInput.Size = new System.Drawing.Size(210, 22);
             this.EmailInput.TabIndex = 7;
+            this.EmailInput.TextChanged += new System.EventHandler(this.EmailInput_TextChanged);
             // 
             // panel2
             // 
@@ -162,18 +176,6 @@
             this.label1.Size = new System.Drawing.Size(246, 33);
             this.label1.TabIndex = 3;
             this.label1.Text = "Sign In to Spookify";
-            // 
-            // StatusLbl
-            // 
-            this.StatusLbl.AutoSize = true;
-            this.StatusLbl.Font = new System.Drawing.Font("Montserrat", 9F);
-            this.StatusLbl.Location = new System.Drawing.Point(703, 361);
-            this.StatusLbl.Name = "StatusLbl";
-            this.StatusLbl.Size = new System.Drawing.Size(95, 21);
-            this.StatusLbl.TabIndex = 14;
-            this.StatusLbl.Text = "Signing In...";
-            this.StatusLbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.StatusLbl.Visible = false;
             // 
             // SignInScreen
             // 

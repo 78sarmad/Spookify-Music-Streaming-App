@@ -145,6 +145,13 @@ namespace VP_Project.Controllers
         {
             string sql = "INSERT INTO `user_collections` (`playlist_id`,`track_id`) VALUES('"+playlist.PlaylistID+"','"+track.TrackID+"');";
             MySqlDataReader data = executeQuery(sql);
+
+            int numTracks = int.Parse(playlist.NoOfTracks) + 1;
+
+            // increment no of tracks
+            sql = "UPDATE playlists SET no_of_tracks='" + numTracks + "' WHERE playlist_id=" + playlist.PlaylistID;
+            data = executeQuery(sql);
+
             Database.closeConnection();
         }
 

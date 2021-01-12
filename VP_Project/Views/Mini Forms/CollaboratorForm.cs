@@ -38,11 +38,11 @@ namespace VP_Project.Views.Mini_Forms
                 DBO.changeCollaborator(Playlist, NewCollabEmail);
                 DBO.loadUserData();
                 MessageBox.Show("Playlist Collaborater updated.", "Success");
-                this.Dispose();
+                this.Close();
             }
             else
             {
-                MessageBox.Show("User not found. Please recheck email.", "Success");
+                MessageBox.Show("User not found. Please recheck email.", "Error");
             }
         }
 
