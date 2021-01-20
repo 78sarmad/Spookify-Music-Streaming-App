@@ -126,6 +126,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1001, 87);
             this.panel2.TabIndex = 28;
+            this.panel2.MouseHover += new System.EventHandler(this.panel2_MouseHover);
             // 
             // NowPlayingArtist
             // 
@@ -169,6 +170,7 @@
             this.PrevBtn.Size = new System.Drawing.Size(30, 30);
             this.PrevBtn.TabIndex = 43;
             this.PrevBtn.TabStop = false;
+            this.PrevBtn.Click += new System.EventHandler(this.PrevBtn_Click);
             // 
             // NextBtn
             // 
@@ -180,6 +182,7 @@
             this.NextBtn.Size = new System.Drawing.Size(30, 30);
             this.NextBtn.TabIndex = 42;
             this.NextBtn.TabStop = false;
+            this.NextBtn.Click += new System.EventHandler(this.NextBtn_Click);
             // 
             // PlayStopBtn
             // 

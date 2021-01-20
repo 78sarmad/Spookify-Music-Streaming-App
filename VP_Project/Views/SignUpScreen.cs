@@ -40,6 +40,13 @@ namespace VP_Project
 
         private void SignUpBtn_Click(object sender, EventArgs e)
         {
+            if (NameInput.Text == "")
+                Session.ErrProv.SetError(NameInput, "Name cannot be empty");
+            if (EmailInput.Text == "")
+                Session.ErrProv.SetError(EmailInput, "Email cannot be empty");
+            if (PasswordInput.Text == "")
+                Session.ErrProv.SetError(PasswordInput, "Password cannot be empty");
+
             if (!nameError && !emailError && !pwdError)
             {
                 bool isSuccessful = DBO.signUp(NameInput.Text, EmailInput.Text, PasswordInput.Text);

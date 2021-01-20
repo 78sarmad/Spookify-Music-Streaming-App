@@ -39,8 +39,7 @@ namespace VP_Project
             SignedInTitle.Text = Session.ActiveUser.Name;
             if (Session.isTrackLoaded)
                 loadTrackInfo();
-            if (Session.isPlaying)
-                setNowPlaying();
+            setNowPlaying();
 
             if (new_tracks.Count > 0)
             {
@@ -169,7 +168,8 @@ namespace VP_Project
         {
             if (Session.isTrackLoaded)
             {
-                MessageBox.Show("Name: " + Session.NowPlaying.Name + "\nArtist: " + Session.NowPlaying.Artist + "\nStream Link: " + Session.NowPlaying.URL, "Share Track");
+                ShareTrackForm STF = new ShareTrackForm();
+                STF.Show();
             }
         }
 
@@ -211,6 +211,37 @@ namespace VP_Project
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void PrevBtn_Click(object sender, EventArgs e)
+        {
+            setSyncLabel();
+            MEF.loadPrev();
+            setNowPlaying();
+        }
+
+        private void NextBtn_Click(object sender, EventArgs e)
+        {
+            setSyncLabel();
+            MEF.loadNext();
+            setNowPlaying();
+        }
+
+        private void panel2_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip HelpTip = new ToolTip();
+            HelpTip.ShowAlways = true;
+            HelpTip.SetToolTip(panel2, "Play a track to use player functionality.");  
+        }
+
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+            if (TrackSearchTbx.Text != "")
+            {
+                SearchTrackForm STF = new SearchTrackForm(TrackSearchTbx.Text);
+                STF.Show();
+                this.Close();
+            }
         }
     }
 }

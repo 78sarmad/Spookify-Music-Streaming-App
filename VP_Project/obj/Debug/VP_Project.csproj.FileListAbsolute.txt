@@ -17,3 +17,5 @@ C:\Users\78sar\documents\visual studio 2013\Projects\VP_Project\VP_Project\obj\D
 C:\Users\78sar\documents\visual studio 2013\Projects\VP_Project\VP_Project\obj\Debug\VP_Project.exe
 C:\Users\78sar\documents\visual studio 2013\Projects\VP_Project\VP_Project\obj\Debug\VP_Project.pdb
 C:\Users\78sar\documents\visual studio 2013\Projects\VP_Project\VP_Project\obj\Debug\VP_Project.csprojResolveAssemblyReference.cache
+C:\Users\78sar\Documents\Visual Studio 2013\Projects\VP_Project\VP_Project\obj\Debug\VP_Project.Views.Mini_Forms.ShareTrackForm.resources
+C:\Users\78sar\Documents\Visual Studio 2013\Projects\VP_Project\VP_Project\obj\Debug\VP_Project.Views.Mini_Forms.SearchTrackForm.resources

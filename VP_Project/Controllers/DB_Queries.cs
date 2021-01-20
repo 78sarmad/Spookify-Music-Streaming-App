@@ -10,12 +10,18 @@ namespace VP_Project.Controllers
 {
     class DB_Queries
     {
+        private Database DB;
+
+        public DB_Queries()
+        {
+            DB = new Database();
+        }
+
         private MySqlDataReader executeQuery(String query)
         {
-            Database.openConnection();
-            var cmd = new MySqlCommand(query, Database.getConnection());
+            DB.openConnection();
+            var cmd = new MySqlCommand(query, DB.getConnection());
             MySqlDataReader dr = cmd.ExecuteReader();
-
             return dr;
         }
 
@@ -35,7 +41,6 @@ namespace VP_Project.Controllers
                     UserFromDB.Email = data.GetString(2);
                 }
             }
-            Database.closeConnection();
 
             return UserFromDB;
         }
@@ -83,7 +88,6 @@ namespace VP_Project.Controllers
 
                 UserFromDB.Playlists.Add(Playlist);
             }
-            Database.closeConnection();
 
             return UserFromDB;
         }
@@ -92,7 +96,6 @@ namespace VP_Project.Controllers
         {
             string sql = "INSERT INTO `users` (`name`,`email`, `pwd`) VALUES ('"+name+"','"+email+"','"+password+"')";
             MySqlDataReader data = executeQuery(sql);
-            Database.closeConnection();
         }
 
         public List<Track> queryNewTracks()
@@ -114,7 +117,6 @@ namespace VP_Project.Controllers
 
                 new_tracks.Add(track);
             }
-            Database.closeConnection();
 
             return new_tracks;
         }
@@ -136,9 +138,31 @@ namespace VP_Project.Controllers
 
                 my_playlists.Add(playlist);
             }
-            Database.closeConnection();
 
             return my_playlists;
+        }
+
+        public List<Track> getSearchResults(String searchTerm)
+        {
+            string sql = "SELECT * from tracks WHERE locate('"+searchTerm+"', name)>0";
+            MySqlDataReader data = executeQuery(sql);
+
+            List<Track> search_results = new List<Track>();
+
+            while (data.Read())
+            {
+                Track track = new Track();
+                track.TrackID = data.GetString(0);
+                track.Name = data.GetString(1);
+                track.Artist = data.GetString(2);
+                track.Duration = data.GetString(3);
+                track.Cover_URL = data.GetString(4);
+                track.URL = data.GetString(5);
+
+                search_results.Add(track);
+            }
+
+            return search_results;
         }
 
         public void insertTrackInPlaylist(Playlist playlist, Track track)
@@ -152,14 +176,13 @@ namespace VP_Project.Controllers
             sql = "UPDATE playlists SET no_of_tracks='" + numTracks + "' WHERE playlist_id=" + playlist.PlaylistID;
             data = executeQuery(sql);
 
-            Database.closeConnection();
+            DB.closeConnection();
         }
 
         public void createNewPlaylist(String playlistName, String ActiveUserID)
         {
             string sql = "INSERT INTO `playlists` (`name`, `user_id`) VALUES('"+playlistName+"','"+ActiveUserID+"');";
             MySqlDataReader data = executeQuery(sql);
-            Database.closeConnection();
         }
 
         public String retrieveUserIdFromEmail(String email)
@@ -170,7 +193,6 @@ namespace VP_Project.Controllers
 
             while(data.Read())
                 userId = data.GetString(0);
-            Database.closeConnection();
 
             return userId;
         }
@@ -183,7 +205,6 @@ namespace VP_Project.Controllers
 
             while (data.Read())
                 userEmail = data.GetString(0);
-            Database.closeConnection();
 
             return userEmail;
         }
@@ -192,14 +213,12 @@ namespace VP_Project.Controllers
         {
             string sql = "UPDATE playlists SET collaborator_id='" + userId + "' WHERE playlist_id=" + playlist.PlaylistID;
             MySqlDataReader data = executeQuery(sql);
-            Database.closeConnection();
         }
 
         public void removePlaylistFromDB(Playlist playlist)
         {
             string sql = "DELETE FROM playlists WHERE playlist_id=" + playlist.PlaylistID; // :'(
             MySqlDataReader data = executeQuery(sql);
-            Database.closeConnection();
         }
     }
 }

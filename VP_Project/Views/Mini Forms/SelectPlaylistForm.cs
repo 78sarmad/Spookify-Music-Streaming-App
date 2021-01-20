@@ -21,11 +21,12 @@ namespace VP_Project.Views.Mini_Forms
         {
             InitializeComponent();
             DBO = new Operations();
-            my_playlists = DBO.getPlaylists();
         }
 
         private void SelectPlaylistForm_Load(object sender, EventArgs e)
         {
+            my_playlists = DBO.getPlaylists();
+
             foreach (Playlist playlist in my_playlists)
                 PlaylistsLbx.Items.Add(playlist.Name + "\t" + playlist.NoOfTracks + " Tracks");
         }

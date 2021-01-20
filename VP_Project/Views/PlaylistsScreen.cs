@@ -38,8 +38,7 @@ namespace VP_Project
             SignedInTitle.Text = Session.ActiveUser.Name;
             if (Session.isTrackLoaded)
                 loadTrackInfo();
-            if (Session.isPlaying)
-                setNowPlaying();
+            setNowPlaying();
 
             int playlistCount = Session.ActiveUser.Playlists.Count;
 
@@ -156,7 +155,8 @@ namespace VP_Project
         {
             if (Session.isTrackLoaded)
             {
-                MessageBox.Show("Name: " + Session.NowPlaying.Name + "\nArtist: " + Session.NowPlaying.Artist + "\nStream Link: " + Session.NowPlaying.URL, "Share Track");
+                ShareTrackForm STF = new ShareTrackForm();
+                STF.Show();
             }
         }
 
@@ -205,6 +205,27 @@ namespace VP_Project
             CreatePlaylistForm CPF = new CreatePlaylistForm();
             CPF.Show();
             this.Close();
+        }
+
+        private void PrevBtn_Click(object sender, EventArgs e)
+        {
+            setSyncLabel();
+            MEF.loadPrev();
+            setNowPlaying();
+        }
+
+        private void NextBtn_Click(object sender, EventArgs e)
+        {
+            setSyncLabel();
+            MEF.loadNext();
+            setNowPlaying();
+        }
+
+        private void panel2_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip HelpTip = new ToolTip();
+            HelpTip.ShowAlways = true;
+            HelpTip.SetToolTip(panel2, "Play a track to use player functionality.");  
         }
     }
 }

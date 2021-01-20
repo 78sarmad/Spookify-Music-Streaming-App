@@ -39,5 +39,27 @@ namespace VP_Project.Controllers
             Session.Player.Stop();
             Session.isPlaying = false;
         }
+
+        public void loadPrev()
+        {
+            if (Session.TracksInQueue.Count > 1)
+            {
+                if (Session.trackIndex - 1 >= 0 && Session.trackIndex <= Session.TracksInQueue.Count - 1)
+                    Session.NowPlaying = Session.TracksInQueue.ElementAt(Session.trackIndex--);
+
+                playMusic();
+            }
+        }
+
+        public void loadNext()
+        {
+            if (Session.TracksInQueue.Count > 1)
+            {
+                if (Session.trackIndex <= Session.TracksInQueue.Count - 1)
+                    Session.NowPlaying = Session.TracksInQueue.ElementAt(Session.trackIndex++);
+                
+                playMusic();
+            }
+        }
     }
 }

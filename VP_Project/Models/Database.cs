@@ -5,20 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace VP_Project.Models
 {
-    // singleton class - one instance in whole execution
-    public static class Database
+    class Database
     {
-        private static String DBHost = "localhost";
-        private static String DBUser = "root";
-        private static String DBPwd = "";
-        private static String DBName = "spookify_app";
+        private String DBHost = "localhost";
+        private String DBUser = "root";
+        private String DBPwd = "";
+        private String DBName = "spookify_app";
 
-        public static MySqlConnection conn = null;
+        public MySqlConnection conn = null;
 
-        public static void openConnection()
+        public void openConnection()
         {
             string connStr = @"server="+DBHost+";database="+DBName+";uid="+DBUser+";pwd="+DBPwd+";";
             conn = new MySqlConnection(connStr);
@@ -34,21 +34,21 @@ namespace VP_Project.Models
             }
         }
 
-        public static void closeConnection()
+        public void closeConnection()
         {
             conn.Close();
         }
 
         // checks if connection is open
-        public static bool isConnValid()
+        public bool isConnOpen()
         {
-            if (conn != null)
+            if (conn.State == ConnectionState.Open)
                 return true;
             else
                 return false;
         }
 
-        public static MySqlConnection getConnection()
+        public MySqlConnection getConnection()
         {
             return conn;
         }

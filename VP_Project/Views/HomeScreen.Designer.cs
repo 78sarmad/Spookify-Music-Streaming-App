@@ -55,6 +55,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.SearchBtn = new System.Windows.Forms.Button();
+            this.TrackSearchTbx = new System.Windows.Forms.TextBox();
             this.ExitBtn = new System.Windows.Forms.Label();
             this.Track3Duration = new System.Windows.Forms.Label();
             this.Track2Duration = new System.Windows.Forms.Label();
@@ -127,6 +129,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1001, 87);
             this.panel2.TabIndex = 28;
+            this.panel2.MouseHover += new System.EventHandler(this.panel2_MouseHover);
             // 
             // NowPlayingArtist
             // 
@@ -170,6 +173,7 @@
             this.PrevBtn.Size = new System.Drawing.Size(30, 30);
             this.PrevBtn.TabIndex = 43;
             this.PrevBtn.TabStop = false;
+            this.PrevBtn.Click += new System.EventHandler(this.PrevBtn_Click);
             // 
             // NextBtn
             // 
@@ -181,6 +185,7 @@
             this.NextBtn.Size = new System.Drawing.Size(30, 30);
             this.NextBtn.TabIndex = 42;
             this.NextBtn.TabStop = false;
+            this.NextBtn.Click += new System.EventHandler(this.NextBtn_Click);
             // 
             // PlayStopBtn
             // 
@@ -385,6 +390,8 @@
             // 
             this.panel3.BackgroundImage = global::VP_Project.Properties.Resources.vector_creator__2_;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Controls.Add(this.SearchBtn);
+            this.panel3.Controls.Add(this.TrackSearchTbx);
             this.panel3.Controls.Add(this.ExitBtn);
             this.panel3.Controls.Add(this.Track3Duration);
             this.panel3.Controls.Add(this.Track2Duration);
@@ -399,6 +406,26 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1018, 548);
             this.panel3.TabIndex = 30;
+            // 
+            // SearchBtn
+            // 
+            this.SearchBtn.BackColor = System.Drawing.Color.Navy;
+            this.SearchBtn.Font = new System.Drawing.Font("Montserrat SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.SearchBtn.ForeColor = System.Drawing.Color.White;
+            this.SearchBtn.Location = new System.Drawing.Point(491, 175);
+            this.SearchBtn.Name = "SearchBtn";
+            this.SearchBtn.Size = new System.Drawing.Size(98, 28);
+            this.SearchBtn.TabIndex = 54;
+            this.SearchBtn.Text = "SEARCH";
+            this.SearchBtn.UseVisualStyleBackColor = false;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
+            // 
+            // TrackSearchTbx
+            // 
+            this.TrackSearchTbx.Location = new System.Drawing.Point(205, 177);
+            this.TrackSearchTbx.Name = "TrackSearchTbx";
+            this.TrackSearchTbx.Size = new System.Drawing.Size(267, 22);
+            this.TrackSearchTbx.TabIndex = 1;
             // 
             // ExitBtn
             // 
@@ -590,6 +617,8 @@
         private System.Windows.Forms.ContextMenuStrip UserMenu;
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
         private System.Windows.Forms.Label ExitBtn;
+        private System.Windows.Forms.TextBox TrackSearchTbx;
+        private System.Windows.Forms.Button SearchBtn;
 
     }
 }

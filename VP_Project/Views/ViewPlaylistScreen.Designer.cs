@@ -55,6 +55,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.PlayPlaylistBtn = new System.Windows.Forms.Button();
             this.ViewMoreLbl = new System.Windows.Forms.Label();
             this.DeleteBtn = new System.Windows.Forms.PictureBox();
             this.ExitBtn = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@
             this.Track2Name = new System.Windows.Forms.Label();
             this.UserMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PlayPlaylistBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShareBtn)).BeginInit();
@@ -133,6 +133,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1001, 87);
             this.panel2.TabIndex = 28;
+            this.panel2.MouseHover += new System.EventHandler(this.panel2_MouseHover);
             // 
             // NowPlayingArtist
             // 
@@ -176,6 +177,7 @@
             this.PrevBtn.Size = new System.Drawing.Size(30, 30);
             this.PrevBtn.TabIndex = 43;
             this.PrevBtn.TabStop = false;
+            this.PrevBtn.Click += new System.EventHandler(this.PrevBtn_Click);
             // 
             // NextBtn
             // 
@@ -187,6 +189,7 @@
             this.NextBtn.Size = new System.Drawing.Size(30, 30);
             this.NextBtn.TabIndex = 42;
             this.NextBtn.TabStop = false;
+            this.NextBtn.Click += new System.EventHandler(this.NextBtn_Click);
             // 
             // PlayStopBtn
             // 
@@ -411,6 +414,19 @@
             this.panel3.Size = new System.Drawing.Size(1018, 548);
             this.panel3.TabIndex = 30;
             // 
+            // PlayPlaylistBtn
+            // 
+            this.PlayPlaylistBtn.BackColor = System.Drawing.Color.Navy;
+            this.PlayPlaylistBtn.Font = new System.Drawing.Font("Montserrat SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.PlayPlaylistBtn.ForeColor = System.Drawing.Color.White;
+            this.PlayPlaylistBtn.Location = new System.Drawing.Point(380, 245);
+            this.PlayPlaylistBtn.Name = "PlayPlaylistBtn";
+            this.PlayPlaylistBtn.Size = new System.Drawing.Size(80, 28);
+            this.PlayPlaylistBtn.TabIndex = 54;
+            this.PlayPlaylistBtn.Text = "PLAY";
+            this.PlayPlaylistBtn.UseVisualStyleBackColor = false;
+            this.PlayPlaylistBtn.Click += new System.EventHandler(this.PlayPlaylistBtn_Click);
+            // 
             // ViewMoreLbl
             // 
             this.ViewMoreLbl.AutoSize = true;
@@ -561,19 +577,6 @@
             this.signOutToolStripMenuItem.Size = new System.Drawing.Size(135, 24);
             this.signOutToolStripMenuItem.Text = "Sign Out";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
-            // 
-            // PlayPlaylistBtn
-            // 
-            this.PlayPlaylistBtn.BackColor = System.Drawing.Color.Navy;
-            this.PlayPlaylistBtn.Font = new System.Drawing.Font("Montserrat SemiBold", 8F, System.Drawing.FontStyle.Bold);
-            this.PlayPlaylistBtn.ForeColor = System.Drawing.Color.White;
-            this.PlayPlaylistBtn.Location = new System.Drawing.Point(380, 245);
-            this.PlayPlaylistBtn.Name = "PlayPlaylistBtn";
-            this.PlayPlaylistBtn.Size = new System.Drawing.Size(80, 28);
-            this.PlayPlaylistBtn.TabIndex = 54;
-            this.PlayPlaylistBtn.Text = "PLAY";
-            this.PlayPlaylistBtn.UseVisualStyleBackColor = false;
-            this.PlayPlaylistBtn.Click += new System.EventHandler(this.PlayPlaylistBtn_Click);
             // 
             // ViewPlaylistScreen
             // 

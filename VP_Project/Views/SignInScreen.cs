@@ -29,6 +29,11 @@ namespace VP_Project
 
         private void SignInBtn_Click(object sender, EventArgs e)
         {
+            if (EmailInput.Text == "")
+                Session.ErrProv.SetError(EmailInput, "Email cannot be empty");
+            if (PasswordInput.Text == "")
+                Session.ErrProv.SetError(PasswordInput, "Password cannot be empty");
+
             if (!emailError && !pwdError)
             {
                 StatusLbl.Visible = true;
@@ -44,9 +49,10 @@ namespace VP_Project
                 }
                 else
                 {
-                    MessageBox.Show("Incorrect credentials. Please retry.", "Sign In Failed");
+                    MessageBox.Show("Sign in unsuccessful, please try again.", "Sign In Failed");
                 }
             }
+            StatusLbl.Visible = false;
         }
 
         private void AltSignUpBtn_Click(object sender, EventArgs e)

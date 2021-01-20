@@ -73,6 +73,18 @@
     <Compile Include="Views\Mini Forms\DeletePlaylistForm.Designer.cs">
       <DependentUpon>DeletePlaylistForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Mini Forms\SearchTrackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Mini Forms\SearchTrackForm.Designer.cs">
+      <DependentUpon>SearchTrackForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Mini Forms\ShareTrackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Mini Forms\ShareTrackForm.Designer.cs">
+      <DependentUpon>ShareTrackForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Mini Forms\ViewMoreTracksForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +143,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Mini Forms\DeletePlaylistForm.resx">
       <DependentUpon>DeletePlaylistForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Mini Forms\SearchTrackForm.resx">
+      <DependentUpon>SearchTrackForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Mini Forms\ShareTrackForm.resx">
+      <DependentUpon>ShareTrackForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Mini Forms\ViewMoreTracksForm.resx">
       <DependentUpon>ViewMoreTracksForm.cs</DependentUpon>
