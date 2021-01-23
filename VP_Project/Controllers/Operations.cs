@@ -163,18 +163,18 @@ namespace VP_Project.Controllers
 
         public String getUserIdFromEmail(String email)
         {
-            String userId = "";
+            String userEmail = "";
             
             DB.openConnection();
             if (DB.isConnOpen())
             {
-                userId = DBQ.retrieveUserIdFromEmail(email);
+                DBQ.retrieveUserIdFromEmail(email);
                 DB.closeConnection();
             }
             else
                 MessageBox.Show("Could not establish connection with the database.", "Error");
 
-            return userId;
+            return userEmail;
         }
 
         public String getUserEmailFromId(String userId)
@@ -184,7 +184,7 @@ namespace VP_Project.Controllers
             DB.openConnection();
             if (DB.isConnOpen())
             {
-                userEmail = DBQ.retrieveUserEmailFromId(userId);
+                DBQ.retrieveUserEmailFromId(userId);
                 DB.closeConnection();
             }
             else

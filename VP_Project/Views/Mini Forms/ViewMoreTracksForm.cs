@@ -47,10 +47,7 @@ namespace VP_Project.Views.Mini_Forms
         {
             Track SelectedTrack;
             if (isPlayPressed)
-            {
                 SelectedTrack = Playlist.Tracks.ElementAt(TracksLbx.SelectedIndex);
-                Session.isTrackLoaded = true;
-            }
             else
                 SelectedTrack = Session.NowPlaying;
         }

@@ -118,7 +118,6 @@
             this.Name = "SearchTrackForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search Track";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SearchTrackForm_FormClosed);
             this.Load += new System.EventHandler(this.SearchTrackForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

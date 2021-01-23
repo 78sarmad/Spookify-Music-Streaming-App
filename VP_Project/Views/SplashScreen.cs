@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VP_Project.Models;
@@ -19,17 +18,17 @@ namespace VP_Project
             InitializeComponent();
         }
 
-        private void ExitBtn_Click(object sender, EventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
-        }
-
-        private void SplashScreen_Shown(object sender, EventArgs e)
+        private void SplashScreen_Load(object sender, EventArgs e)
         {
             SignInScreen SIS = new SignInScreen();
             SIS.Show();
 
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

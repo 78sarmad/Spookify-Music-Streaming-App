@@ -91,7 +91,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Montserrat SemiBold", 8F);
-            this.label4.Location = new System.Drawing.Point(8, 165);
+            this.label4.Location = new System.Drawing.Point(8, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(125, 20);
             this.label4.TabIndex = 53;
@@ -120,7 +120,7 @@
             // TrackLinkTbx
             // 
             this.TrackLinkTbx.HideSelection = false;
-            this.TrackLinkTbx.Location = new System.Drawing.Point(117, 116);
+            this.TrackLinkTbx.Location = new System.Drawing.Point(117, 117);
             this.TrackLinkTbx.Name = "TrackLinkTbx";
             this.TrackLinkTbx.Size = new System.Drawing.Size(243, 22);
             this.TrackLinkTbx.TabIndex = 50;

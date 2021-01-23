@@ -35,8 +35,6 @@ namespace VP_Project
 
         private void PlaylistsScreen_Load(object sender, EventArgs e)
         {
-            DBO.loadUserData();
-
             SignedInTitle.Text = Session.ActiveUser.Name;
             if (Session.isTrackLoaded)
                 loadTrackInfo();
