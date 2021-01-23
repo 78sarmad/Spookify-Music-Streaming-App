@@ -144,7 +144,7 @@ namespace VP_Project.Controllers
 
         public List<Track> getSearchResults(String searchTerm)
         {
-            string sql = "SELECT * from tracks WHERE locate('"+searchTerm+"', name)>0";
+            string sql = "SELECT * from tracks WHERE locate('"+searchTerm+"', name) > 0";
             MySqlDataReader data = executeQuery(sql);
 
             List<Track> search_results = new List<Track>();

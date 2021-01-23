@@ -28,14 +28,14 @@ namespace VP_Project
             InitializeComponent();
             WC = new WebClient();
             DBO = new Operations();
-            DBO.loadUserData();
-
-            new_tracks = DBO.loadNewTracks();
             MEF = new Media_Functions();
         }
 
         private void HomeScreen_Load(object sender, EventArgs e)
         {
+            DBO.loadUserData();
+            new_tracks = DBO.loadNewTracks();
+
             SignedInTitle.Text = Session.ActiveUser.Name;
             if (Session.isTrackLoaded)
                 loadTrackInfo();

@@ -18,6 +18,7 @@ namespace VP_Project.Views.Mini_Forms
         private Media_Functions MEF;
         private String findTerm;
         private List<Track> searchResults;
+        private bool isPlayPressed = false;
 
         public SearchTrackForm(String searchTerm)
         {
@@ -37,27 +38,12 @@ namespace VP_Project.Views.Mini_Forms
 
         private void PlayBtn_Click(object sender, EventArgs e)
         {
-            if (TrackResultsLbx.SelectedIndex != -1)
-            {
-                Track selected_track = searchResults.ElementAt(TrackResultsLbx.SelectedIndex);
-                Session.NowPlaying = selected_track;
-                Session.isTrackLoaded = true;
-
-                HomeScreen HS = new HomeScreen();
-                HS.Show();
-                this.Close();
-                MEF.loadMusic();
-            }
-            else
-            {
-                MessageBox.Show("No track selected.", "Error");
-            }
+            isPlayPressed = true;
+            this.Close();
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
-            HomeScreen HS = new HomeScreen();
-            HS.Show();
             this.Close();
         }
 
@@ -65,6 +51,22 @@ namespace VP_Project.Views.Mini_Forms
         {
             String searchURL = "https://www.youtube.com/results?search_query=" + findTerm;
             System.Diagnostics.Process.Start(searchURL);
+        }
+
+        private void SearchTrackForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Track SelectedTrack;
+            if (isPlayPressed)
+            {
+                SelectedTrack = searchResults.ElementAt(TrackResultsLbx.SelectedIndex);
+                Session.isTrackLoaded = true;
+            }            
+            else
+                SelectedTrack = Session.NowPlaying;
+
+            MEF.loadMusic();
+            HomeScreen HS = new HomeScreen();
+            HS.Show();
         }
     }
 }
